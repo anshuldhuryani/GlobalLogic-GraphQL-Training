@@ -1,0 +1,8 @@
+npm init --yes
+
+npm install express
+npm install @apollo/server graphql
+npm install body-parser
+npm install cors
+npm install graphql-tag
+npm install mongoose
