@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const TodoRouter = require('./routes/todo.routes');
+const cors = require('cors');
 
 // Connecting to Database
 const MONGO_URL = 'mongodb+srv://sudikshakapoor001:eA8C0hry5oKYhXOn@cluster0.ehn1r31.mongodb.net/?retryWrites=true&w=majority';
@@ -10,6 +11,7 @@ mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch((error) => {console.log(error);})
 
 app.use(express.json());    
+app.use(cors());
 // Configure Routes Middleware
 app.use('/todo', TodoRouter);
 
